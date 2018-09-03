@@ -1,10 +1,9 @@
 <template>
   <div id="app">
     <app-header></app-header>
-    <navigation-left class="top"></navigation-left>
-    <template>
-      <router-view class="bottom"></router-view>
-    </template>
+   <!--  <navigation-left class="top"></navigation-left> -->
+    <app-body></app-body>
+    <app-footer></app-footer>
   </div>
 </template>
 

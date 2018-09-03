@@ -8,12 +8,15 @@ import './assets/bootstrap/css/bootstrap.min.css'
 import './assets/bootstrap/js/bootstrap.min.js'
 
 import Header from './components/Header'
-import NavigationLeft from './components/NavigationLeft'
+import Body from './components/Body'
+import Footer from './components/Footer'
 
 Vue.config.productionTip = false
 
 Vue.component('AppHeader',Header);
-Vue.component("NavigationLeft",NavigationLeft);
+Vue.component("AppBody",Body);
+Vue.component("AppFooter",Footer);
+
 new Vue({
   el: '#app',
   router,

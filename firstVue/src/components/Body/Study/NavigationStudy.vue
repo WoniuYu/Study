@@ -1,13 +1,13 @@
+<!-- 左侧导航栏 -->
 <template>
   <div class="container-fluid">
+  <!-- 导航栏内容 -->
     <transition name="munu">
       <div class="row munuList" v-if="show">
         <div class="col-md-2 navigation">
           <ul class="nav nav-tabs nav-stacked navbar-inverse">
             <li>
-              <a href="#">
-                首页
-              </a>
+              <router-link to='/study/indexstudy'>首页</router-link>
             </li>
             <li>
               <a href="#systemSetting" class="nav-header collapsed" data-toggle="collapse">
@@ -38,15 +38,18 @@
         </div>
       </div>
     </transition>
+
+    <!-- 导航栏背景图片
+	  导航栏显示 -->
     <transition name="leaveMunu">
       <div v-if="show" class="imgMunuLeave" @click="show = !show">
       </div>
     </transition>
+    <!-- 导航栏隐藏 -->
     <transition name="enterMunu">
       <div v-if="!show" class="imgMunuEnter" @click="show = !show">
       </div>
     </transition>
-<!--     <button @click="show = !show">收起</button> -->
   </div>
 </div>
 </template>
@@ -67,28 +70,14 @@
       // }
     }
   }
-  var a = function () {
-    var arr = [];
-    var n = 0;
-    var str = "";
-    for (var j = 0; j < 4; j++) {
-      arr[j] = [];
-      for (var k = 0; k < 4; k++){
-        n++;
-        arr[j][k] = n;
-        str = str + "  " + arr[j][k];
-      }
-    }
-    console.log(str);
-  }
-  a();
 </script>
 
 <style scoped>
   .container-fluid {
     position: absolute;
-    top: 68px;
+    /*top: 68px;*/
     z-index: 10;
+    opacity: 0.8
   }
   .imgMunuLeave {
     width: 180px;
@@ -121,7 +110,6 @@
     z-index: 10;
     float: left;
   }
-
   /*导航栏列表   过渡*/
   .munu-enter-active {
     transition: all 1.5s linear;
@@ -166,12 +154,10 @@
   }
   @keyframes enterMunuEnter {
     0% {width: 0px; opacity: 0}
-    100% {width: 20px; opacity: 1}
+    100% {width: 20px; opacity: 0.8}
   }
   @keyframes enterMunuLeave {
-    0% {width: 20px; opacity: 1}
+    0% {width: 20px; opacity: 0.8}
     100% {width: 0px; opacity: 0}
   }
-
 </style>
-
